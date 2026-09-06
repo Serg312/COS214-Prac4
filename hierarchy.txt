@@ -1,0 +1,25 @@
+ProductionOrder: "Car Body Production"                            - root
+│
+├── MechanicalAssembly: "Chassis Build"                          - level 1
+│     │
+│     ├── SubComponentGroup: "Frame Sub-Group"                   - level 2
+│     │     ├── WeldingOperation: "Weld frame rails"             - level 3 (leaf)
+│     │     └── InspectionOperation: "Frame weld QA check"       - level 3 (leaf)
+│     │
+│     └── SubComponentGroup: "Suspension Sub-Group"               - level 2
+│           ├── AssemblyOperation: "Fit suspension mounts"        - level 3 (leaf)
+│           └── InspectionOperation: "Suspension QA check"        - level 3 (leaf)
+│
+├── ElectricalAssembly: "Wiring Harness"                          - level 1
+│     │
+│     └── AssemblyOperation: "Route main harness"                 - level 2 (leaf)
+│     ├── AssemblyOperation: "Connect battery terminals"          - level 2 (leaf)
+│     └── InspectionOperation: "Electrical safety check"          - level 2 (leaf)
+│        
+│
+└── PaintAndFinishAssembly: "Body Finishing"                       - level 1
+      │
+      └── SubComponentGroup: "Finishing Sub-Group"                 - level 2
+            ├── PaintingOperation: "Apply primer"                  - level 3 (leaf)
+            ├── PaintingOperation: "Apply top coat"                - level 3 (leaf)
+            └── InspectionOperation: "Final finish QA"             - level 3 (leaf)
