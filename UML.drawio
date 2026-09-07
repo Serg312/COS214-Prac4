@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36">
   <diagram name="Page-1" id="5NTJvNJl3tzKpgheX_75">
-    <mxGraphModel dx="2019" dy="726" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="3139" dy="1604" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -149,6 +149,59 @@
               <mxPoint x="135" y="360" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-21" edge="1" parent="1" source="mh6APlX_DlYX9eT8V5Jb-2" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=diamond;endFill=0;" target="lWeifFlQZCeoyy83G-8p-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-22" connectable="0" parent="lWeifFlQZCeoyy83G-8p-21" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" value="0...1" vertex="1">
+          <mxGeometry relative="1" x="-0.9126" y="-2" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-2" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Decorator" vertex="1">
+          <mxGeometry height="190" width="295" x="790" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-3" parent="lWeifFlQZCeoyy83G-8p-2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="# component : WorkComponent*" vertex="1">
+          <mxGeometry height="26" width="295" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-4" parent="lWeifFlQZCeoyy83G-8p-2" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="295" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-5" parent="lWeifFlQZCeoyy83G-8p-2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Decorator(component : WorkComponent*)&lt;div&gt;+ ~Decorator()&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="295" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-19" edge="1" parent="1" source="lWeifFlQZCeoyy83G-8p-10" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=0;" target="lWeifFlQZCeoyy83G-8p-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-10" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="FragileDecorator" vertex="1">
+          <mxGeometry height="130" width="330" x="1060" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-11" parent="lWeifFlQZCeoyy83G-8p-10" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="# component : WorkComponent*" vertex="1">
+          <mxGeometry height="26" width="330" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-12" parent="lWeifFlQZCeoyy83G-8p-10" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="330" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-13" parent="lWeifFlQZCeoyy83G-8p-10" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ FragileDecorator(wrappedContent : WorkComponent)&lt;div&gt;+ getStatus() : string&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ estimatedDuration() : int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="330" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-18" edge="1" parent="1" source="lWeifFlQZCeoyy83G-8p-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;" target="lWeifFlQZCeoyy83G-8p-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-14" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="PriorityDecorator" vertex="1">
+          <mxGeometry height="130" width="330" x="690" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-15" parent="lWeifFlQZCeoyy83G-8p-14" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="# component : WorkComponent*" vertex="1">
+          <mxGeometry height="26" width="330" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-16" parent="lWeifFlQZCeoyy83G-8p-14" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="330" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-17" parent="lWeifFlQZCeoyy83G-8p-14" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ PriorityDecorator(wrappedContent : WorkComponent)&lt;div&gt;+ getStatus() : string&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ estimatedDuration() : int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="330" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lWeifFlQZCeoyy83G-8p-24" edge="1" parent="1" source="lWeifFlQZCeoyy83G-8p-5" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.005;entryY=0.802;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=0;" target="mh6APlX_DlYX9eT8V5Jb-5">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
