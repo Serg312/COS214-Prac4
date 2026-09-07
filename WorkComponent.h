@@ -21,4 +21,4 @@ class WorkComponent
         std::string name;
 }; 
 
-#endif;
+#endif

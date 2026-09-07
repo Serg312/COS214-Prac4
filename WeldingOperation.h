@@ -10,7 +10,7 @@
 class WeldingOperation : public Operation 
 {
     public:
-        WeldingOperation(const std::string& name, int duration);
+        WeldingOperation(const std::string& name, int duration, int minDuration);
         virtual ~WeldingOperation();
         std::string getStatus() const override;
         int estimateDuration() const override;

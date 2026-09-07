@@ -9,7 +9,7 @@
 class PaintAndFinishAssembly : public SubAssembly 
 {
     public:
-        PaintAndFinishAssembly(const std::string& name);
+        PaintAndFinishAssembly(const std::string& name, int dryTime);
         virtual ~PaintAndFinishAssembly();
         std::string getStatus() const override;
         int estimateDuration() const override;
