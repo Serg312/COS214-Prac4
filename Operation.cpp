@@ -1,16 +1,46 @@
 #include "Operation.h"
+#include "OperationState.h"
+#include "QueuedState.h"
 
-Operation::Operation(const std::string& name, int duration) : WorkComponent(name), duration(duration) {}
+Operation::Operation(const std::string& name, int duration) : WorkComponent(name), duration(duration) 
+{
+    state = new QueuedState();
+}
 
-Operation::~Operation() {}      //Leaves have no children, nothing needed here
+Operation::~Operation() 
+{
+    if (state != nullptr)
+    {
+        delete state;
+        state = nullptr;
+    }
+}
 
 std::string Operation::getStatus() const 
 {
-    //Placeholder until State pattern is implemented
-    return "Pending";
+    return state->getStatus();
 }
 
 int Operation::estimateDuration() const 
 {
-    return duration;
+    return state->estimateDuration(duration);
+}
+
+void Operation::startProgress() 
+{
+    state->startProgress(this);
+}
+
+void Operation::finishTask() 
+{
+    state->finishTask(this);
+}
+
+void Operation::setState(OperationState* newState) 
+{
+    if (state != nullptr)
+    {
+        delete state;
+    }
+    state = newState;
 }

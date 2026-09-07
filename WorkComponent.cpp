@@ -1,4 +1,6 @@
 #include "WorkComponent.h"
+#include "DepthFirstIterator.h"
+#include "LeafOnlyIterator.h"
 
 //Default: leaves have no children (add + remove have no implementation)
 
@@ -23,4 +25,14 @@ int WorkComponent::getChildCount() const
 std::string WorkComponent::getName() const 
 {
     return name;
+}
+
+WorkIterator* WorkComponent::createIterator() 
+{
+    return new DepthFirstIterator(this);
+}
+
+WorkIterator* WorkComponent::createLeafIterator() 
+{
+    return new LeafOnlyIterator(this);
 }

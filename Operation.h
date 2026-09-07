@@ -5,6 +5,8 @@
 
 //Concrete Leaf: single manufacturing step. No children, getChild returns nullptr via base default
 
+class OperationState;
+
 class Operation : public WorkComponent 
 {
     public:
@@ -12,8 +14,13 @@ class Operation : public WorkComponent
         virtual ~Operation();
         std::string getStatus() const override;
         int estimateDuration() const override;
+
+        void startProgress();
+        void finishTask();
+        void setState(OperationState* newState);
     private:
         int duration;
+        OperationState* state;
 };
 
 #endif
