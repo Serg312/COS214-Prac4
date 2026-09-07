@@ -2,6 +2,7 @@
 #include <string>
 
 #include "WorkComponent.h"
+#include "WorkIterator.h"
 #include "SubAssembly.h"
 #include "ProductionOrder.h"
 #include "MechanicalAssembly.h"
@@ -86,6 +87,46 @@ int main()
     std::cout << "Mechanical duration after reattachment: " << mechanical->estimateDuration() << " minutes" << "\n";
 
     std::cout << "\nFinal total estimated duration: " << order->estimateDuration() << " minutes\n";
+
+    //Demonstrate Iterators
+    std::cout << "\n Depth-First Traversal \n";
+    WorkIterator* dfs = order->createIterator();
+    for (dfs->first(); !dfs->isDone(); dfs->next())
+    {
+        std::cout << "  " << dfs->currentItem()->getName() << "\n";
+    }
+    delete dfs;
+
+    std::cout << "\n Leaf-Only Traversal \n";
+    WorkIterator* leaf = order->createLeafIterator();
+    for (leaf->first(); !leaf->isDone(); leaf->next())
+    {
+        std::cout << "  " << leaf->currentItem()->getName() << "\n";
+    }
+    delete leaf;
+
+    //Demonstrate State Pattern
+    std::cout << "\n State Pattern Demonstration \n";
+    // Get an actual operation to demonstrate lifecycle
+    Operation* sampleOp = dynamic_cast<Operation*>(electrical->getChild(0)); // Route main harness
+    if (sampleOp)
+    {
+        std::cout << "Initial Status: " << sampleOp->getStatus() << ", Duration: " << sampleOp->estimateDuration() << " mins\n";
+        
+        // Invalid transition
+        sampleOp->finishTask();
+        
+        // Valid transition
+        sampleOp->startProgress();
+        std::cout << "Status after starting: " << sampleOp->getStatus() << ", Duration: " << sampleOp->estimateDuration() << " mins\n";
+        
+        // Invalid transition
+        sampleOp->startProgress();
+
+        // Valid transition
+        sampleOp->finishTask();
+        std::cout << "Status after finishing: " << sampleOp->getStatus() << ", Duration: " << sampleOp->estimateDuration() << " mins\n";
+    }
 
     //Cleanup (recusrively deletes entire tree)
     delete order;

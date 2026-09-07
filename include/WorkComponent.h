@@ -17,6 +17,8 @@ class WorkComponent
         virtual std::string getName() const;
         virtual std::string getStatus() const = 0;
         virtual int estimateDuration() const = 0;
+        virtual class WorkIterator* createIterator();
+        virtual class WorkIterator* createLeafIterator();
     protected:
         std::string name;
 }; 
