@@ -1,10 +1,10 @@
-#include "PriorityDecorator.h";
+#include "FragileDecorator.h";
 
-std::string PriorityDecorator::getStatus() const {
+std::string FragileDecorator::getStatus() const {
     return "[URGENT] " + component->getStatus();
 }
 
-int PriorityDecorator::estimateDuration() const {
+int FragileDecorator::estimateDuration() const {
     // priority order so will be done faster
     return component->estimateDuration() * 0.9;
 }

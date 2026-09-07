@@ -4,6 +4,11 @@
 #include "Decorator.h"
 #include "WorkComponent.h"
 
+
+// Adds an urgent state to the component
+// So every component gets the urgent tag added to it and its 
+// time reduced by 10%
+
 class PriorityDecorator : public Decorator {
 public:
     PriorityDecorator(WorkComponent* wrappedComponent) 
