@@ -16,6 +16,9 @@
 #include "InspectionOperation.h"
 #include "AssemblyOperation.h"
 #include "PaintingOperation.h"
+#include "Decorator.h"
+#include "FragileDecorator.h"
+#include "PriorityDecorator.h"
 
 int main()
 {
@@ -38,7 +41,7 @@ int main()
 
     //Level 1: Electrical Assembly (no sub-group layer underneath)
     ElectricalAssembly* electrical = new ElectricalAssembly("Wiring Harness");
-    electrical->add(new AssemblyOperation("Route main harness", 20));
+    electrical->add(new FragileDecorator(new PriorityDecorator(new AssemblyOperation("Route main harness", 20))));
     electrical->add(new AssemblyOperation("Connect battery terminals", 15));
     electrical->add(new InspectionOperation("Electrical safety check", 10));
 
@@ -46,7 +49,7 @@ int main()
     PaintAndFinishAssembly* paintFinish = new PaintAndFinishAssembly("Body Finishing", 60);
 
     SubAssembly* finishingGroup = new SubAssembly("Finishing Sub-Group");
-    finishingGroup->add(new PaintingOperation("Apply primer", 20));
+    finishingGroup->add(new FragileDecorator(new PriorityDecorator( new PaintingOperation("Apply primer", 20))));
     finishingGroup->add(new PaintingOperation("Apply top coat", 20));
     finishingGroup->add(new InspectionOperation("Final finish QA", 10));
 
@@ -74,6 +77,14 @@ int main()
     {
         WorkComponent* op = electrical->getChild(i);
         std::cout << "  - " << op->getName() << " | duration: " << op->estimateDuration() << " minutes" << "\n";
+    }
+
+    //Demonstrate Decorator functionality
+    std::cout << "\nFinishing branch detail (Decorator Demonstration):\n";
+    for (int i = 0; i < finishingGroup->getChildCount(); ++i)
+    {
+        WorkComponent* op = finishingGroup->getChild(i);
+        std::cout << "  - " << op->getName() << " | status: " << op->getStatus() << " | duration: " << op->estimateDuration() << " minutes" << "\n";
     }
 
     //Demonstrate structural change: remove and reattach

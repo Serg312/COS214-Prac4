@@ -1,10 +1,10 @@
 #include "FragileDecorator.h"
 
 std::string FragileDecorator::getStatus() const {
-    return "[URGENT] " + component->getStatus();
+    return "[FRAGILE] " + component->getStatus();
 }
 
 int FragileDecorator::estimateDuration() const {
     // priority order so will be done faster
-    return component->estimateDuration() * 0.9;
+    return component->estimateDuration() * 1.1;
 }
