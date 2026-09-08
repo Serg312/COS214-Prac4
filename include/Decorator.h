@@ -16,7 +16,9 @@ class Decorator : public WorkComponent {
         : WorkComponent(component->getName()), component(component) {
     }
 
-    virtual ~Decorator() = default;
+    virtual ~Decorator() {
+        delete component;
+    }
 
 };
 
